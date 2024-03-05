@@ -13,3 +13,17 @@ TypeScript 是 JavaScript 的超集，在其原有基础上做了丰富、扩充
 
 将错误尽早的暴露在编译阶段
 避免团队协作，单靠口头约定出现的规范执行问题 
+
+## 执行工具
+### `ts-node`
+
+**选项**
+- `-P/--project`：指定 `tsconfig` 文件位置，默认查找项目下的 `tsconfig.json`
+- `-T/--tanspileOnly`：禁用执行过程中的类型检查
+- `--swc`：在 tanspileOnly 的基础上，使用 `swc` 来进行编译，提升执行速度
+- `--emit`：执行的同时将编译产物输出到 `.ts-node` 文件夹下(与 `--compilerHost` 选项同时使用)
+
+### `ts-node-dev`
+
+**选项**
+- respawn，启用监听重启

@@ -11,3 +11,5 @@ const cat: typeof dog = {
   name: 'cat',
   age: 2
 }
+console.log(cat.name)
+console.log(cat.age)
