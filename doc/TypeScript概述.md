@@ -17,6 +17,8 @@ TypeScript 是 JavaScript 的超集，在其原有基础上做了丰富、扩充
 ## 执行工具
 ### `ts-node`
 
+`ts-node index.ts`
+
 **选项**
 - `-P/--project`：指定 `tsconfig` 文件位置，默认查找项目下的 `tsconfig.json`
 - `-T/--tanspileOnly`：禁用执行过程中的类型检查
@@ -24,6 +26,12 @@ TypeScript 是 JavaScript 的超集，在其原有基础上做了丰富、扩充
 - `--emit`：执行的同时将编译产物输出到 `.ts-node` 文件夹下(与 `--compilerHost` 选项同时使用)
 
 ### `ts-node-dev`
+
+```
+ts-node-dev --respawn index.ts
+// 全局安装
+tsnd --respawn index.ts
+```
 
 **选项**
 - respawn，启用监听重启
