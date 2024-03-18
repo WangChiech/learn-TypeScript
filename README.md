@@ -4,6 +4,8 @@
 
 [TypeScript 类型](./doc/TypeScript类型.md)
 
+[TypeScript 类型运算](./doc/TypeScript类型运算.md)
+
 
 ## 参考
 
