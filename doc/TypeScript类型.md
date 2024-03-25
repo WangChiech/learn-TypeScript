@@ -114,6 +114,9 @@ function err(msg: string): never {
   throw new Error(msg)
 }
 ```
+```
+type IsNever<T> = [T] extends [never] ? true : false
+```
 
 `never` 本质上是类型系统的最底层类型(Bottom Type)
 ### unknown
@@ -142,9 +145,24 @@ anyVal = 100
 let str: string = anyVal
 ```
 ```
-type IsAny<T> = 0 extends 1 & T ? true : false;
+type IsAny<T> = 1 extends (2 & T) ? true : false
+```
+```
+type res1 = any & 1 // any & 任意类型均为 any
+type res2 = any | unknown // any | 任意类型均为 any
+
+type res6 = 1 extends any ? true : false // 1 为任意类型均为 true
+// any extend 任意类型(unknown 除外)， 结果为两种值的联合类型
+type res3 = any extends 1 ? true : false // boolean
+type res4 = any extends never ? 'a' : 'b' // 'a' | 'b'
+type res5 = any extends unknown ? 'a' : 'b' // 'a'
+```
+```
+type key = keyof any // string | number | symbol
 ```
 `any` 本质是类型系统中的顶级类型(Top Type)
+
+
 
 ## 类型的装饰
 类型系统支持描述类型的属性，如可选、只读等

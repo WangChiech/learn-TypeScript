@@ -1,0 +1,19 @@
+<script type="module">
+  import Eventemitter from '../node_modules/eventemitter3/dist/eventemitter3.esm.js'
+
+  class Cls extends Eventemitter {
+    constructor() {
+      super()
+    }
+    start() {
+      this.start = true
+      this.emit('type1', 'started')
+    }
+  }
+  const obj = new Cls()
+  obj.on('type1', (res) => {
+    console.log(res)
+  })
+  setTimeout(() => obj.start(), 3000)
+  
+</script>

@@ -54,3 +54,6 @@ type FibonacciLoop<
   :FibonacciLoop<CurrentArr, [...PrevArr, ...CurrentArr], [...IndexArr, unknown], Num>
 type Fibonacci<Num extends number> = FibonacciLoop<[1], [], [], Num>
 type res = Fibonacci<3>
+
+
+export {}

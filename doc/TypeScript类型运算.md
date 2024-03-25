@@ -24,6 +24,14 @@ type res = First<[1, 2, 3]>
 ```
 type Union1 = 1 | 2 | 3
 ```
+```
+type IsUnion<A, B = A> =
+  A extends A
+    ? [B] extends [A]
+      ? false
+      : true
+    : never
+```
 
 ## 交叉: `&`
 交叉类型(Intersection)，表示对类型做合并
